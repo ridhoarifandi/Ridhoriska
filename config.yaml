@@ -1,0 +1,112 @@
+# ============================================================
+#  Market Signal Assistant — konfigurasi
+# ============================================================
+
+# Sumber data:
+#   mcp    = pakai local MCP bridge (bidouilles/mcp-tradingview-server) — sesuai permintaan
+#   direct = pakai library tradingview_scraper langsung (tanpa bridge, fallback paling simpel)
+# 'mcp' = pakai local MCP bridge (sudah terpasang & terverifikasi). 'direct' = fallback instan.
+data_backend: mcp
+
+# Pengaturan bridge MCP (dipakai hanya saat data_backend: mcp).
+# Perintah ini yang dijalankan untuk men-spawn server MCP via stdio.
+bridge:
+  command: "D:/my project/mcp-tradingview-server/.venv/Scripts/python.exe"
+  args: ["tradingview_server.py"]
+  cwd: "D:/my project/mcp-tradingview-server"
+
+# Instrumen yang dianalisa. exchange umum forex: OANDA, FX_IDC.
+# pip_size = nilai 1 pip dalam harga (XAUUSD umumnya 0.1; pair 4-desimal 0.0001).
+symbols:
+  - symbol: XAUUSD
+    exchange: OANDA
+    pip_size: 0.1
+
+# Timeframe (urut dari tertinggi ke terendah).
+timeframes: ["4h", "1h", "30m", "15m", "5m", "1m"]
+
+# Bobot konfluensi — FOKUS M1/M5 (equity kecil/scalping): M1 & M5 paling dominan.
+weights:
+  "4h": 0.5
+  "1h": 0.75
+  "30m": 1.0
+  "15m": 1.5
+  "5m": 2.5
+  "1m": 3.0
+
+# Pengelompokan TF (untuk skor ringkas yang ditampilkan).
+groups:
+  htf: ["4h", "1h"]
+  mtf: ["30m", "15m"]
+  ltf: ["5m", "1m"]
+
+signal:
+  # --- FOKUS scalping: sinyal ditentukan M5 & M1 ---
+  focus_tfs: ["5m", "1m"]        # TF penentu sinyal & arah
+  min_focus_score: 0.40          # kekuatan minimum rata-rata M5/M1 -> di bawah ini WAIT
+  require_focus_agree: true      # M5 & M1 wajib searah
+  min_adx: 18                    # ADX minimum di TF entry (scalp boleh lebih longgar)
+
+  # --- Filter pelindung TF besar (hanya MEMBLOKIR bila tren besar melawan kuat) ---
+  htf_guard_tfs: ["1h", "4h"]
+  htf_guard_block_score: 0.45    # blok sinyal bila H1/H4 melawan >= ini
+
+  # --- Market NOW vs Limit ---
+  auto_now: true                 # sinyal sangat kuat -> BUY/SELL NOW (harga pasar)
+  now_focus_score: 0.65          # |skor M1/M5| >= ini -> masuk sekarang; selain itu limit
+
+  # --- Manajemen risiko ---
+  order_type: "limit"            # gaya order saat bukan NOW (buy/sell limit, entry pullback)
+  entry_tf_for_levels: "5m"      # TF untuk ambil harga & hitung level
+  entry_pullback_pips: 8         # jarak limit dari harga sekarang (pips)
+  sl_pips: 25                    # jarak SL default (pips) — dipakai krn data ATR tak tersedia
+  atr_sl_mult: 1.2               # dipakai HANYA bila bridge menyediakan ATR
+  max_loss_pips: 50              # batas keras SL -> tidak akan lebih dari 50 pips
+  rr_mults: [3.0, 5.0, 8.0]      # TP = kelipatan risiko (TP1 = RR 1:3, sesuai syarat)
+  min_rr: 3.0                    # batal kirim sinyal bila RR TP1 < 1:3
+
+fundamentals:
+  enabled: true
+  # News blackout: tahan sinyal di sekitar event ekonomi berisiko tinggi (NFP/CPI/FOMC).
+  news_blackout_minutes_before: 30  # X menit sebelum event -> WAIT
+  news_blackout_minutes_after: 15   # X menit sesudah event -> WAIT
+  impact_filter: ["High"]           # level impact yang dianggap berisiko
+  currencies: ["USD"]               # relevan untuk XAUUSD (emas vs dolar)
+  show_headlines: 3                 # jumlah headline berita ditampilkan di pesan
+  calendar_url: "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+
+reasoning:
+  enabled: true
+  model: "claude-sonnet-4-6"    # lebih murah utk run sering; ganti "claude-opus-4-8" kalau mau paling tajam
+  max_tokens: 1000
+  language: "id"
+  min_confidence_to_signal: 80  # bila confidence Claude < ini -> aksi diturunkan jadi WAIT
+
+telegram:
+  enabled: true                 # token & chat_id diambil dari .env
+  parse_mode: "Markdown"
+  send_on_wait: false           # true = kirim juga saat WAIT (default: hanya saat ada sinyal)
+
+tracking:
+  enabled: true
+  state_file: "state/positions.json"  # status posisi (di-commit balik oleh GitHub Actions)
+  max_age_hours: 24                    # batalkan pending / tutup posisi lebih tua dari ini
+  notify_on_fill: true                 # notif "POSISI RUNNING" saat harga menyentuh entry (limit ke-fill)
+
+learning:
+  enabled: true
+  trade_log: "state/trade_log.json"       # jurnal semua trade yang ditutup
+  adaptive_file: "state/adaptive.json"    # parameter adaptif hasil belajar
+  recent_window: 20                       # jumlah trade terakhir untuk hitung win rate
+  target_winrate: 0.30                    # win rate di bawah ini -> perketat filter
+  focus_penalty_step: 0.05                # tambahan ambang skor tiap kondisi buruk
+  focus_penalty_max: 0.15                 # batas atas pengetatan
+  cooldown_after_consecutive_sl: 3        # SL beruntun sebanyak ini -> jeda
+  cooldown_hours: 6                       # lama jeda (tidak buka sinyal baru)
+
+report:
+  monthly_auto: true                 # kirim recap bulan lalu otomatis di awal bulan baru
+  state_file: "state/recap.json"     # penanda bulan terakhir yang sudah di-recap
+
+logging:
+  signals_dir: "signals"

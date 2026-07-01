@@ -1,0 +1,10 @@
+.env
+.venv/
+logs/
+reports/
+__pycache__/
+*.pyc
+signals/*.json
+signals/*.md
+!signals/.gitkeep
+export/

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "XAUUSD-20260701T112510-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "limit",
+    "entry": 4023.6899999999996,
+    "sl": 4021.1899999999996,
+    "tps": [
+      4031.1899999999996,
+      4036.1899999999996,
+      4043.6899999999996
+    ],
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "status": "pending",
+    "opened_at": "2026-07-01T11:25:10.169041+00:00",
+    "filled_at": null,
+    "closed_at": null,
+    "tp_hit": [
+      false,
+      false,
+      false
+    ],
+    "result": null
+  }
+]

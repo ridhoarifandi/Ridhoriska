@@ -1,0 +1,52 @@
+name: XAUUSD Signal
+
+# Jadwal dalam UTC. 14:00-23:00 WIB = 07:00-16:00 UTC.
+# Catatan: jadwal GitHub Actions bisa telat 5-15 menit (bukan presisi).
+on:
+  schedule:
+    - cron: "0,30 7-15 * * 1-5"   # 07:00-15:30 UTC = 14:00-22:30 WIB, Sen-Jum
+    - cron: "0 16 * * 1-5"        # 16:00 UTC      = 23:00 WIB, Sen-Jum
+  workflow_dispatch: {}           # tombol jalankan manual (untuk tes)
+
+concurrency:
+  group: signal
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # untuk commit balik state/positions.json
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run analysis (backend direct)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m src.main --backend direct
+
+      - name: Persist positions state
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state/)" ]; then
+            git config user.name "signal-bot"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add state/
+            git commit -m "state: update positions [skip ci]"
+            git pull --rebase --autostash origin main || true
+            git push || (git pull --rebase --autostash origin main && git push)
+          else
+            echo "state tidak berubah"
+          fi
