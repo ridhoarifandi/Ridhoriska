@@ -1,41 +1,5 @@
 [
   {
-    "id": "XAUUSD-20260702T173948-SELL",
-    "symbol": "XAUUSD",
-    "direction": "SELL",
-    "order_type": "limit",
-    "entry": 4109.765,
-    "sl": 4112.265,
-    "tps": [
-      4102.265,
-      4097.265,
-      4089.7650000000003
-    ],
-    "rr": [
-      3.0,
-      5.0,
-      8.0
-    ],
-    "status": "active",
-    "opened_at": "2026-07-02T17:39:48.367074+00:00",
-    "filled_at": "2026-07-03T10:08:37.815491+00:00",
-    "closed_at": null,
-    "tp_hit": [
-      false,
-      false,
-      false
-    ],
-    "result": null,
-    "context": {
-      "focus": -0.51,
-      "guard": 0.4,
-      "adx": 23.0,
-      "order_type": "limit",
-      "hour_wib": 0,
-      "near_news": false
-    }
-  },
-  {
     "id": "XAUUSD-20260703T100839-BUY",
     "symbol": "XAUUSD",
     "direction": "BUY",
@@ -52,9 +16,9 @@
       5.0,
       8.0
     ],
-    "status": "pending",
+    "status": "active",
     "opened_at": "2026-07-03T10:08:39.686350+00:00",
-    "filled_at": null,
+    "filled_at": "2026-07-03T12:27:51.708106+00:00",
     "closed_at": null,
     "tp_hit": [
       false,
@@ -68,6 +32,78 @@
       "adx": 18.2,
       "order_type": "limit",
       "hour_wib": 17,
+      "near_news": false
+    }
+  },
+  {
+    "id": "XAUUSD-20260703T122753-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "entry": 4173.435,
+    "sl": 4175.935,
+    "tps": [
+      4165.935,
+      4160.935,
+      4153.435
+    ],
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "status": "pending",
+    "opened_at": "2026-07-03T12:27:53.223772+00:00",
+    "filled_at": null,
+    "closed_at": null,
+    "tp_hit": [
+      false,
+      false,
+      false
+    ],
+    "result": null,
+    "context": {
+      "focus": -0.609,
+      "guard": 0.348,
+      "adx": 18.6,
+      "order_type": "limit",
+      "hour_wib": 19,
+      "near_news": false
+    }
+  },
+  {
+    "id": "XAUUSD-20260702T173948-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "entry": 4109.765,
+    "sl": 4112.265,
+    "tps": [
+      4102.265,
+      4097.265,
+      4089.7650000000003
+    ],
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "status": "closed",
+    "opened_at": "2026-07-02T17:39:48.367074+00:00",
+    "filled_at": "2026-07-03T10:08:37.815491+00:00",
+    "closed_at": "2026-07-03T12:27:51.708095+00:00",
+    "tp_hit": [
+      false,
+      false,
+      false
+    ],
+    "result": "SL",
+    "context": {
+      "focus": -0.51,
+      "guard": 0.4,
+      "adx": 23.0,
+      "order_type": "limit",
+      "hour_wib": 0,
       "near_news": false
     }
   },
