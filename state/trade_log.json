@@ -135,5 +135,29 @@
       "hour_wib": 18,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260709T163046-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "market",
+    "result": "SL",
+    "entry": 4133.7,
+    "sl": 4131.2,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-07-09T16:30:46.020342+00:00",
+    "closed_at": "2026-07-10T10:26:30.520202+00:00",
+    "context": {
+      "focus": 0.653,
+      "guard": 0.451,
+      "adx": 30.3,
+      "order_type": "market",
+      "hour_wib": 23,
+      "near_news": false
+    }
   }
 ]
