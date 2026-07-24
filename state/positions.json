@@ -16,9 +16,9 @@
       5.0,
       8.0
     ],
-    "status": "pending",
+    "status": "active",
     "opened_at": "2026-07-24T15:13:59.819801+00:00",
-    "filled_at": null,
+    "filled_at": "2026-07-24T17:06:59.709194+00:00",
     "closed_at": null,
     "tp_hit": [
       false,
