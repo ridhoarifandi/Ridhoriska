@@ -207,5 +207,29 @@
       "hour_wib": 23,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260723T092757-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "result": "expired",
+    "entry": 4090.795,
+    "sl": 4093.295,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-07-23T09:27:57.621938+00:00",
+    "closed_at": "2026-07-24T11:18:33.040303+00:00",
+    "context": {
+      "focus": -0.641,
+      "guard": -0.079,
+      "adx": 40.7,
+      "order_type": "limit",
+      "hour_wib": 16,
+      "near_news": false
+    }
   }
 ]
