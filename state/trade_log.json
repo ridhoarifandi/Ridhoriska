@@ -231,5 +231,29 @@
       "hour_wib": 16,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260724T151359-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "limit",
+    "result": "expired",
+    "entry": 4067.745,
+    "sl": 4065.245,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-07-24T15:13:59.819801+00:00",
+    "closed_at": "2026-07-27T10:47:49.544495+00:00",
+    "context": {
+      "focus": 0.609,
+      "guard": 0.333,
+      "adx": 26.6,
+      "order_type": "limit",
+      "hour_wib": 22,
+      "near_news": false
+    }
   }
 ]
