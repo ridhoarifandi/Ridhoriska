@@ -1,41 +1,5 @@
 [
   {
-    "id": "XAUUSD-20260729T094117-SELL",
-    "symbol": "XAUUSD",
-    "direction": "SELL",
-    "order_type": "limit",
-    "entry": 4033.78,
-    "sl": 4036.28,
-    "tps": [
-      4026.28,
-      4021.28,
-      4013.78
-    ],
-    "rr": [
-      3.0,
-      5.0,
-      8.0
-    ],
-    "status": "active",
-    "opened_at": "2026-07-29T09:41:17.570454+00:00",
-    "filled_at": "2026-07-29T17:08:21.813766+00:00",
-    "closed_at": null,
-    "tp_hit": [
-      false,
-      false,
-      false
-    ],
-    "result": null,
-    "context": {
-      "focus": -0.56,
-      "guard": -0.364,
-      "adx": 30.1,
-      "order_type": "limit",
-      "hour_wib": 16,
-      "near_news": false
-    }
-  },
-  {
     "id": "XAUUSD-20260729T170825-BUY",
     "symbol": "XAUUSD",
     "direction": "BUY",
@@ -69,6 +33,42 @@
       "order_type": "limit",
       "hour_wib": 0,
       "near_news": true
+    }
+  },
+  {
+    "id": "XAUUSD-20260729T094117-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "entry": 4033.78,
+    "sl": 4036.28,
+    "tps": [
+      4026.28,
+      4021.28,
+      4013.78
+    ],
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "status": "closed",
+    "opened_at": "2026-07-29T09:41:17.570454+00:00",
+    "filled_at": "2026-07-29T17:08:21.813766+00:00",
+    "closed_at": "2026-07-30T09:33:45.954998+00:00",
+    "tp_hit": [
+      false,
+      false,
+      false
+    ],
+    "result": "SL",
+    "context": {
+      "focus": -0.56,
+      "guard": -0.364,
+      "adx": 30.1,
+      "order_type": "limit",
+      "hour_wib": 16,
+      "near_news": false
     }
   },
   {
