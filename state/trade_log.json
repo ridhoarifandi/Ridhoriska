@@ -399,5 +399,29 @@
       "hour_wib": 21,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260814T093638-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "limit",
+    "result": "TP3",
+    "entry": 4352.865,
+    "sl": 4350.365,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-08-14T09:36:38.270712+00:00",
+    "closed_at": "2026-08-14T13:54:51.733603+00:00",
+    "context": {
+      "focus": 0.571,
+      "guard": 0.131,
+      "adx": 48.6,
+      "order_type": "limit",
+      "hour_wib": 16,
+      "near_news": false
+    }
   }
 ]
