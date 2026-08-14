@@ -36,6 +36,42 @@
     }
   },
   {
+    "id": "XAUUSD-20260814T093638-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "limit",
+    "entry": 4352.865,
+    "sl": 4350.365,
+    "tps": [
+      4360.365,
+      4365.365,
+      4372.865
+    ],
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "status": "pending",
+    "opened_at": "2026-08-14T09:36:38.270712+00:00",
+    "filled_at": null,
+    "closed_at": null,
+    "tp_hit": [
+      false,
+      false,
+      false
+    ],
+    "result": null,
+    "context": {
+      "focus": 0.571,
+      "guard": 0.131,
+      "adx": 48.6,
+      "order_type": "limit",
+      "hour_wib": 16,
+      "near_news": false
+    }
+  },
+  {
     "id": "XAUUSD-20260810T143753-BUY",
     "symbol": "XAUUSD",
     "direction": "BUY",
