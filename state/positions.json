@@ -16,16 +16,16 @@
       5.0,
       8.0
     ],
-    "status": "active",
+    "status": "closed",
     "opened_at": "2026-08-17T10:36:33.353156+00:00",
     "filled_at": "2026-08-17T11:54:37.512158+00:00",
-    "closed_at": null,
+    "closed_at": "2026-08-17T12:52:57.034634+00:00",
     "tp_hit": [
       false,
       false,
       false
     ],
-    "result": null,
+    "result": "SL",
     "context": {
       "focus": 0.452,
       "guard": 0.552,
