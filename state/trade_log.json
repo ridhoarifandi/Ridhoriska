@@ -495,5 +495,29 @@
       "hour_wib": 21,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260818T125618-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "result": "TP3",
+    "entry": 4393.1050000000005,
+    "sl": 4395.6050000000005,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-08-18T12:56:18.484853+00:00",
+    "closed_at": "2026-08-18T15:36:41.392662+00:00",
+    "context": {
+      "focus": -0.559,
+      "guard": 0.014,
+      "adx": 18.8,
+      "order_type": "limit",
+      "hour_wib": 19,
+      "near_news": false
+    }
   }
 ]
