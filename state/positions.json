@@ -16,16 +16,16 @@
       5.0,
       8.0
     ],
-    "status": "pending",
+    "status": "closed",
     "opened_at": "2026-08-28T00:42:59.224707+00:00",
     "filled_at": null,
-    "closed_at": null,
+    "closed_at": "2026-08-31T14:57:39.634958+00:00",
     "tp_hit": [
       false,
       false,
       false
     ],
-    "result": null,
+    "result": "expired",
     "context": {
       "focus": -0.458,
       "guard": -0.295,

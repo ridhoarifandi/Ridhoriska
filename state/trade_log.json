@@ -711,5 +711,29 @@
       "hour_wib": 23,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20260828T004259-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "result": "expired",
+    "entry": 4590.985000000001,
+    "sl": 4593.485000000001,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-08-28T00:42:59.224707+00:00",
+    "closed_at": "2026-08-31T14:57:39.634958+00:00",
+    "context": {
+      "focus": -0.458,
+      "guard": -0.295,
+      "adx": 23.2,
+      "order_type": "limit",
+      "hour_wib": 7,
+      "near_news": false
+    }
   }
 ]
