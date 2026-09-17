@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-17T12:30:33.857131+00:00",
-  "decided_trades": 18,
-  "recent_winrate": 0.222,
-  "consecutive_sl": 1,
-  "focus_penalty": 0.05,
+  "updated_at": "2026-09-17T17:33:38.263891+00:00",
+  "decided_trades": 19,
+  "recent_winrate": 0.211,
+  "consecutive_sl": 2,
+  "focus_penalty": 0.1,
   "cooldown_until": null
 }
