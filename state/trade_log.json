@@ -999,5 +999,29 @@
       "hour_wib": 3,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20261014T124605-SELL",
+    "symbol": "XAUUSD",
+    "direction": "SELL",
+    "order_type": "limit",
+    "result": "SL",
+    "entry": 4094.13,
+    "sl": 4096.63,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-10-14T12:46:05.893023+00:00",
+    "closed_at": "2026-10-15T12:33:00.251291+00:00",
+    "context": {
+      "focus": -0.569,
+      "guard": -0.702,
+      "adx": 33.7,
+      "order_type": "limit",
+      "hour_wib": 19,
+      "near_news": false
+    }
   }
 ]
