@@ -1119,5 +1119,29 @@
       "hour_wib": 3,
       "near_news": false
     }
+  },
+  {
+    "id": "XAUUSD-20261028T204255-BUY",
+    "symbol": "XAUUSD",
+    "direction": "BUY",
+    "order_type": "limit",
+    "result": "SL",
+    "entry": 4069.055,
+    "sl": 4066.555,
+    "rr": [
+      3.0,
+      5.0,
+      8.0
+    ],
+    "opened_at": "2026-10-28T20:42:55.511534+00:00",
+    "closed_at": "2026-10-29T19:46:27.258796+00:00",
+    "context": {
+      "focus": 0.641,
+      "guard": 0.483,
+      "adx": 21.5,
+      "order_type": "limit",
+      "hour_wib": 3,
+      "near_news": false
+    }
   }
 ]
