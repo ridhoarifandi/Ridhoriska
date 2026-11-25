@@ -1,41 +1,5 @@
 [
   {
-    "id": "XAUUSD-20261124T184500-SELL",
-    "symbol": "XAUUSD",
-    "direction": "SELL",
-    "order_type": "limit",
-    "entry": 3558.335,
-    "sl": 3560.835,
-    "tps": [
-      3550.835,
-      3545.835,
-      3538.335
-    ],
-    "rr": [
-      3.0,
-      5.0,
-      8.0
-    ],
-    "status": "pending",
-    "opened_at": "2026-11-24T18:45:00.829460+00:00",
-    "filled_at": null,
-    "closed_at": null,
-    "tp_hit": [
-      false,
-      false,
-      false
-    ],
-    "result": null,
-    "context": {
-      "focus": -0.621,
-      "guard": -0.574,
-      "adx": 31.0,
-      "order_type": "limit",
-      "hour_wib": 1,
-      "near_news": false
-    }
-  },
-  {
     "id": "XAUUSD-20260923T124005-SELL",
     "symbol": "XAUUSD",
     "direction": "SELL",
